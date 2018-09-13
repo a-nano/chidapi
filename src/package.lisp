@@ -1,4 +1,4 @@
 (in-package :common-lisp)
 
-(defpackage cl-hid
+(defpackage chidapi
   (:use :cl))

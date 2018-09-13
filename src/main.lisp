@@ -1,1 +1,1 @@
-(in-package :cl-hid)
+(in-package :chidapi)

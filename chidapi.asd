@@ -1,13 +1,13 @@
-(defsystem "cl-hid"
+(defsystem "chidapi"
   :class :package-inferred-system
   :version "0.1.0"
   :author "Akihide Nano"
   :license "BSD 2-Clause"
-  :description "hid device control"
+  :description "hidapi rapper for common lisp"
   :components ((:module "src"
 			:serial t
 			:components
 			((:file "package")
-			 (:file "hid")
+			 (:file "hidapi")
 			 (:file "main"))))
   :depends-on ("cffi"))
