@@ -10,4 +10,4 @@
 			((:file "package")
 			 (:file "hidapi")
 			 (:file "main"))))
-  :depends-on ("cffi"))
+  :depends-on ("cffi" "alexandria"))
