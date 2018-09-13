@@ -10,4 +10,4 @@
 			((:file "package")
 			 (:file "hidapi")
 			 (:file "main"))))
-  :depends-on ("cffi" "alexandria"))
+  :depends-on ("cffi" "alexandria" "cl-annot"))

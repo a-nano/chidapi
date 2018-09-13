@@ -45,8 +45,8 @@
   (devs hid-device-info*))
 
 (defcfun ("hid_open" hid-open) hid-device*
-  (vendor-id :ushort)
-  (product-id :ushort)
+  (vendor-id :unsigned-short)
+  (product-id :unsigned-short)
   (serial-number wchar-t*))
     
 (defcfun ("hid_open_path" hid-open-path) hid-device*
@@ -54,7 +54,7 @@
 
 (defcfun ("hid_write" hid-write) :int
   (device hid-device*)
-  (data (:pointer :uchar))
+  (data (:pointer :unsigned-char))
   (length size-t))
 
 (defcfun ("hid_read_timeout" hid-read-timeout) :int
