@@ -6,8 +6,11 @@
     #+windows :utf-16le))
 
 (define-foreign-library hidapi
-  (t (:or "libhidapi-0"
-	  "libhidapi")))
+  (:windows (:or "libhidapi-0"
+		 "libhidapi"))
+  (:unix (:or "libhidapi-libsub"
+	      "libhidapi-hidraw")))
+
 (use-foreign-library hidapi)
 
 (defctype wchar-t* (:string :encoding #.+wchar-encoding+))
@@ -89,13 +92,13 @@
 
 (defcfun ("hid_get_serial_number_string" hid-get-serial-number-string) :int
   (device hid-device*)
-  (string wchar*)
+  (string wchar-t*)
   (maxlen size-t))
 
 (defcfun ("hid_get_indexed_string" hid-get-indexed-string) :int
   (device hid-device*)
   (string-index :int)
-  (string wchar*)
+  (string wchar-t*)
   (maxlen size-t))
 
 (defcfun ("hid_error" hid-error) wchar-t*
